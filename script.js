@@ -1,28 +1,50 @@
+/* ================= NAVBAR SCROLL EFFECT ================= */
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   const navbar = document.getElementById("navbar");
-  navbar.classList.toggle("scrolled", window.scrollY > 20);
+
+  if (window.scrollY > 20) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
 });
 
+/* ================= MOBILE MENU TOGGLE ================= */
 
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
 }
-// Scroll reveal animation
+
+/* Close mobile menu when a link is clicked */
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mobileMenu").style.display = "none";
+  });
+});
+
+/* ================= SCROLL REVEAL ANIMATION ================= */
+
 function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+  const revealPoint = 120;
 
-  reveals.forEach((element) => {
-    const windowHeight = window.innerHeight;
+  reveals.forEach(element => {
     const elementTop = element.getBoundingClientRect().top;
-    const visiblePoint = 100;
 
-    if (elementTop < windowHeight - visiblePoint) {
+    if (elementTop < windowHeight - revealPoint) {
       element.classList.add("active");
     }
   });
 }
 
+/* Run on scroll and on page load */
 window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+window.addEventListener("load", revealOnScroll);
