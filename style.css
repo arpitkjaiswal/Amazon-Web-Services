@@ -1,50 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>AWS Student Chapter - MIT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+/* ================= GLOBAL ================= */
 
-<header id="navbar">
-  <div class="container">
-    
-    <div class="logo">
-      AWS Student Chapter
-      <span>MIT</span>
-    </div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
 
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Events</a>
-      <a href="#">Team</a>
-      <a href="#">Contact</a>
-    </nav>
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+}
 
-    <button class="cta-btn">Join Chapter</button>
+/* ================= NAVBAR ================= */
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  </div>
+#navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1000;
+}
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#">Home</a>
-    <a href="#">Events</a>
-    <a href="#">Team</a>
-    <a href="#">Contact</a>
-    <button class="cta-btn mobile-btn">Join Chapter</button>
-  </div>
-</header>
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-<section class="dummy-content"></section>
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+.logo span {
+  color: #FF9900;
+  font-weight: 600;
+}
 
- /*  EVENTS SECTION  */
+/* NAV LINKS */
+
+.nav-links a {
+  margin-left: 28px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FF9900;
+}
+
+/* CTA BUTTON */
+
+.cta-btn {
+  background: #FF9900;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #ffb347;
+  box-shadow: 0 0 18px rgba(255, 153, 0, 0.6);
+}
+
+/* MOBILE MENU */
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mobile-btn {
+  margin-top: 14px;
+  width: 100%;
+}
+
+/* ================= BLOG SECTION ================= */
 
 .events-section {
   position: relative;
@@ -53,14 +113,8 @@
   overflow: hidden;
 }
 
-.events-container {
-  max-width: 1200px;
-  margin: auto;
-  position: relative;
-  z-index: 2;
-}
+/* Background glow */
 
-/* Subtle background glow */
 .events-section::before {
   content: "";
   position: absolute;
@@ -73,88 +127,101 @@
   border-radius: 50%;
 }
 
-/* HEADER */
+.events-container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* BLOG HEADER */
 
 .events-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
 }
 
 .events-header h2 {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 700;
-  margin-bottom: 18px;
-  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  letter-spacing: -0.6px;
 }
 
 .events-header p {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 700px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 760px;
   margin: auto;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* GRID */
+/* BLOG GRID */
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 48px;
 }
 
-/* CARD */
+/* BLOG CARD */
 
 .event-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 40px;
-  border-radius: 14px;
-  backdrop-filter: blur(14px);
+  padding: 44px;
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
   transition: all 0.4s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(255, 153, 0, 0.7);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-8px);
+  border-color: rgba(255, 153, 0, 0.55);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.65);
 }
 
-/* DATE */
+/* BLOG META */
 
 .event-date {
   display: inline-block;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #FF9900;
-  background: rgba(255, 153, 0, 0.15);
+  background: rgba(255, 153, 0, 0.14);
   padding: 7px 14px;
   border-radius: 6px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  margin-bottom: 22px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
 }
 
-/* TITLE */
+/* BLOG TITLE */
 
 .event-card h3 {
-  font-size: 22px;
-  margin-bottom: 16px;
+  font-size: 23px;
+  margin-bottom: 18px;
   font-weight: 600;
+  line-height: 1.45;
 }
 
-/* DESCRIPTION */
+/* BLOG EXCERPT */
 
 .event-card p {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.7;
-  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.75;
+  margin-bottom: 34px;
 }
 
-/* BUTTON */
+/* READ ARTICLE BUTTON */
 
 .event-btn {
+  margin-top: auto;
+  align-self: flex-start;
   background: transparent;
   border: 1px solid #FF9900;
   color: #FF9900;
@@ -168,10 +235,10 @@
 .event-btn:hover {
   background: #FF9900;
   color: black;
-  box-shadow: 0 0 20px rgba(255, 153, 0, 0.6);
+  box-shadow: 0 0 18px rgba(255, 153, 0, 0.55);
 }
 
-/* SCROLL REVEAL */
+/* ================= SCROLL REVEAL ================= */
 
 .reveal {
   opacity: 0;
@@ -184,10 +251,23 @@
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
   .events-section {
     padding: 100px 20px;
+  }
+
+  .event-card {
+    padding: 36px;
   }
 }
