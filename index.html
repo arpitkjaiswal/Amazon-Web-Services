@@ -2,92 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AWS Student Chapter - MIT</title>
+  <title>AWS Student Chapter MIT · Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header id="navbar">
   <div class="container">
-    
+
     <div class="logo">
       AWS Student Chapter
-      <span>MIT</span>
+      <span>MIT · Blog</span>
     </div>
 
     <nav class="nav-links">
       <a href="#">Home</a>
-      <a href="#">Events</a>
+      <a href="#blog">Blog</a>
       <a href="#">Team</a>
       <a href="#">Contact</a>
     </nav>
 
-    <button class="cta-btn">Join Chapter</button>
+    <button class="cta-btn">Write Article</button>
 
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </div>
 
+  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#">Home</a>
-    <a href="#">Events</a>
+    <a href="#blog">Blog</a>
     <a href="#">Team</a>
     <a href="#">Contact</a>
-    <button class="cta-btn mobile-btn">Join Chapter</button>
+    <button class="cta-btn mobile-btn">Write Article</button>
   </div>
 </header>
 
-<section class="dummy-content"></section>
-
-<script src="script.js"></script>
-</body>
-</html>
-/*Event Section*/
-<section class="events-section" id="events">
+<!-- ================= BLOG SECTION ================= -->
+<section class="events-section" id="blog">
   <div class="events-container">
 
     <div class="events-header reveal">
-      <h2>Upcoming Events</h2>
+      <h2>Latest Insights</h2>
       <p>
-        Expert-led cloud workshops, certification bootcamps, and advanced 
-        architecture sessions conducted by AWS Student Chapter MIT.
+        Curated articles, technical deep dives, and cloud engineering insights
+        authored by AWS Student Chapter MIT.
       </p>
     </div>
 
     <div class="events-grid">
 
-      <div class="event-card reveal">
-        <div class="event-date">MAR 18</div>
-        <h3>AWS Cloud Practitioner Bootcamp</h3>
+      <!-- Blog Card 1 -->
+      <article class="event-card reveal">
+        <span class="event-date">MAR 18 · AWS</span>
+        <h3>AWS Cloud Practitioner: Complete Student Guide</h3>
         <p>
-          Comprehensive foundational training covering AWS core services, 
-          pricing models, and certification preparation strategy.
+          A structured breakdown of AWS core services, pricing models,
+          and proven strategies to clear the Cloud Practitioner exam.
         </p>
-        <button class="event-btn">Register Now</button>
-      </div>
+        <div class="card-footer">
+          <span class="author">By Chapter Admin</span>
+          <a href="#" class="event-btn">Read Article →</a>
+        </div>
+      </article>
 
-      <div class="event-card reveal">
-        <div class="event-date">APR 02</div>
-        <h3>Serverless Architecture Workshop</h3>
+      <!-- Blog Card 2 -->
+      <article class="event-card reveal">
+        <span class="event-date">APR 02 · SERVERLESS</span>
+        <h3>Designing Scalable Serverless Architectures</h3>
         <p>
-          Practical implementation of AWS Lambda, API Gateway, and 
-          event-driven microservices architecture.
+          Practical patterns using AWS Lambda, API Gateway, and
+          event-driven microservices for real-world workloads.
         </p>
-        <button class="event-btn">Register Now</button>
-      </div>
+        <div class="card-footer">
+          <span class="author">By Cloud Team</span>
+          <a href="#" class="event-btn">Read Article →</a>
+        </div>
+      </article>
 
-      <div class="event-card reveal">
-        <div class="event-date">APR 15</div>
-        <h3>Cloud Security & IAM Deep Dive</h3>
+      <!-- Blog Card 3 -->
+      <article class="event-card reveal">
+        <span class="event-date">APR 15 · SECURITY</span>
+        <h3>AWS IAM Explained for Engineering Students</h3>
         <p>
-          Security best practices, identity governance models, and 
-          enterprise-level cloud compliance strategies.
+          Identity management, least-privilege policies, and
+          security best practices used in enterprise AWS environments.
         </p>
-        <button class="event-btn">Register Now</button>
-      </div>
+        <div class="card-footer">
+          <span class="author">By Security Lead</span>
+          <a href="#" class="event-btn">Read Article →</a>
+        </div>
+      </article>
 
     </div>
 
   </div>
 </section>
+
+<!-- ================= SCRIPT ================= -->
+<script src="script.js"></script>
+
+</body>
+</html>
+ 
