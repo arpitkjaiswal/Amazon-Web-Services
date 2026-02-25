@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #f4f5f7;
+  --card: rgba(255,255,255,0.75);
+  --nav-bg: #0b0b0b;
+  --text: #000;
+}
+
+body.dark {
+  --bg: #0b0b0b;
+  --card: rgba(20,20,20,0.75);
+  --text: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+}
+
+/* HEADER CARD */
+.header {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 18px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24px;
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo svg {
+  width: 52px;
+  height: 52px;
+}
+
+.logo-text {
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.logo-text span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* NAVBAR */
+.nav {
+  position: relative;
+  background: var(--nav-bg);
+  padding: 8px;
+  border-radius: 50px;
+  display: flex;
+  gap: 6px;
+}
+
+.nav a {
+  padding: 10px 18px;
+  color: #aaa;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.nav a.active {
+  color: #000;
+}
+
+/* TUBELIGHT INDICATOR */
+.indicator {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 78px;
+  height: 36px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+  transition: all 0.4s ease;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
